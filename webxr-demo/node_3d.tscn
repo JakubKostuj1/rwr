@@ -80,10 +80,11 @@ mesh = SubResource("BoxMesh_noarx")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Level/StaticBody3D2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 shape = SubResource("BoxShape3D_a0tk4")
+debug_color = Color(0.62781405, 0.37934208, 0.93955815, 0.41960785)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Level"]
 transform = Transform3D(0.66253453, -0.4719046, 0.58168215, 0.35462287, 0.8816496, 0.31134644, -0.65976566, 4.506401e-08, 0.75147146, 3.593394, 8.149786, 8.149802)
-light_color = Color(0.87998766, 0.67567897, 0.8727075, 1)
+light_color = Color(0.6352495, 0.8265215, 0.39070585, 1)
 light_energy = 1.5
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -91,6 +92,7 @@ environment = SubResource("Environment_a0tk4")
 
 [node name="Player" type="CharacterBody3D" parent="."]
 script = ExtResource("2_r3fl7")
+gravity = 10.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
 shape = SubResource("CapsuleShape3D_jka67")
@@ -101,6 +103,7 @@ shape = SubResource("CapsuleShape3D_jka67")
 transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="LeftController" type="XRController3D" parent="Player/XROrigin3D"]
+transform = Transform3D(1, 0, 0, 0, 0.28404883, 0.9588098, 0, -0.9588098, 0.28404883, 0, 0, 0)
 tracker = &"left_hand"
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Player/XROrigin3D/LeftController"]
@@ -112,6 +115,7 @@ mesh = SubResource("SphereMesh_noarx")
 transform = Transform3D(-0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
 
 [node name="RightController" type="XRController3D" parent="Player/XROrigin3D"]
+transform = Transform3D(1, 0, 0, 0, 0.054200828, 0.99853015, 0, -0.99853015, 0.054200828, 0, 0, 0)
 tracker = &"right_hand"
 script = ExtResource("3_a0tk4")
 
